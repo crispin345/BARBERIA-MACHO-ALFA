@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BARBERIA_MACHO_ALFA</title>
+  <link rel="stylesheet" href="HOJA1.css">
+</head>
+<body>
+
+  <header>
+    <section class="logo">
+      <h1><img src="ima.png" alt="Logo de la página">BARBERIA MACHO ALFA</h1>
+    </section>
+
+    <div class="franja-roja">
+      <nav>
+        <br>
+        <div class="menu">
+          <ul>
+            <li><a href="Index.html">INICIO</a></li>
+            <li><a href="PRODUCTOS1.html">PRODUCTOS</a></li>
+            <li>CORTES</li>
+            <li><a href="CITAS.html">CITAS</a></li>
+            <li><a href="CHATBOT.html">CHATBOT</a></li>
+            <li><a href="creadores.html">COLABORADORES</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="separador-azul"></div>
+
+  <div class="titulo">
+    <h1>CORTES</h1>
+  </div>
+
+  <!-- Carrusel de cortes -->
+  <div class="carousel-container">
+    <button class="carousel-btn left">&#10094;</button>
+    <div class="carousel-track">
+      <div class="producto">
+        <img src="barba.jpg" alt="Corte clásico">
+        <h3>Corte Clásico</h3>
+      </div>
+
+      <div class="producto">
+        <img src="barba2.jpg" alt="Fade moderno">
+        <h3>Fade Moderno</h3>
+      </div>
+
+      <div class="producto">
+        <img src="CORTE1.jpg" alt="Corte con diseño">
+        <h3>Corte con Diseño</h3>
+      </div>
+
+       <div class="producto">
+        <img src="barba3.jpg" alt="Corte con diseño">
+        <h3>Corte Casi Rapado</h3>
+      </div>
+
+      <div class="producto">
+        <img src="balbo.jpg" alt="Corte militar">
+        <h3>Corte Militar</h3>
+      </div>
+
+      <div class="producto">
+        <img src="barba4.jpg" alt="Corte con barba">
+        <h3>Corte + Barba</h3>
+      </div>
+      
+      <div class="producto">
+        <img src="pelo.jpg" alt="Corte degradado">
+        <h3>Degradado Elegante</h3>
+      </div>
+
+      <div class="producto">
+        <img src="pelo2.jpeg" alt="Corte degradado">
+        <h3>NO PREGUNTE</h3>
+      </div>
+
+      <div class="producto">
+        <img src="pelo3.jpg" alt="Corte degradado">
+        <h3>NO PREGUNTE</h3>
+      </div>
+
+      <div class="producto">
+        <img src="pelo4.jpg" alt="Corte degradado">
+        <h3>NO PREGUNTE</h3>
+      </div>
+    </div>
+    <button class="carousel-btn right">&#10095;</button>
+  </div>
+
+  <footer>
+    <p>Macho Alfa Online © 2025 |</p>
+  </footer>
+
+  <!-- Carrusel Script -->
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const btnLeft = document.querySelector('.carousel-btn.left');
+    const btnRight = document.querySelector('.carousel-btn.right');
+    const container = document.querySelector('.carousel-container');
+
+    let scrollAmount = 0;
+    const scrollStep = 270;
+
+    function updateButtons() {
+      const maxScroll = track.scrollWidth - container.offsetWidth;
+      btnLeft.style.display = scrollAmount > 0 ? 'block' : 'none';
+      btnRight.style.display = scrollAmount < maxScroll ? 'block' : 'none';
+    }
+
+    btnLeft.addEventListener('click', () => {
+      scrollAmount = Math.max(scrollAmount - scrollStep, 0);
+      track.style.transform = `translateX(-${scrollAmount}px)`;
+      updateButtons();
+    });
+
+    btnRight.addEventListener('click', () => {
+      const maxScroll = track.scrollWidth - container.offsetWidth;
+      scrollAmount = Math.min(scrollAmount + scrollStep, maxScroll);
+      track.style.transform = `translateX(-${scrollAmount}px)`;
+      updateButtons();
+    });
+
+    window.addEventListener('resize', updateButtons);
+    window.addEventListener('load', updateButtons);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BARBERIA_MACHO_ALFA</title>
+  <link rel="stylesheet" href="HOJA1.css">
+</head>
+<body>
+
+  <header>
+       <section class="logo">
+  <h1> <img src="ima.png" alt="Logo de la página">BARBERIA MACHO ALFA</h1>
+    </section>
+  
+ <div class="franja-roja">
+      <nav>
+        <br>
+        <div class="menu">
+      <ul>
+        <li><a href="Index.html">INICIO</a></li>
+        <li><a href="PRODUCTOS1.html">PRODUCTOS</a></li>
+        <li><a href="CORTES.html">CORTES</a >       </li>
+        <li><a href="CITAS.html">CITAS</a></li>
+        <LI>CHATBOT</LI>
+        <li><a href="creadores.html">COLABORADORES</a></li>
+
+</div>
+      </ul>
+    </nav>
+</div>
+</header>
+<div class="separador-azul"></div>
+
+<center>
+  <div class="chat-container">
+    <div class="titulo">
+    <h2>Chat Barbería 💈</h2></div>
+  <font color="white"><h2> Habla con Chato para responder tus dudas</h2></font>
+    <div id="chat-box" class="chat-box"></div>
+
+    <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+    <button onclick="sendMessage()">Enviar</button>
+
+
+    <div id="servicios"  style="display:none;"></div>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById("user-input");
+      const chatBox = document.getElementById("chat-box");
+      const userText = input.value.trim();
+    
+      if (userText === "") return;
+
+      chatBox.innerHTML += `<div class="user-message">${userText}</div>`;
+
+      let texto = userText.toLowerCase();
+      let botResponse = "No entendí eso. ¿Puedes repetirlo?";
+
+      if(texto.includes("hola") || texto.includes("buenos dias") || texto.includes("buenas tardes")|| texto.includes("buenas noches") || texto.includes("buenas")) {
+        botResponse = "Bienvenido me llamo Chato ¿En qué puedo ayudarte?";
+      } else if(texto.includes("horario") || texto.includes("abren") || texto.includes("cierran")) {
+        botResponse = "Abrimos de lunes a sábado de 9am a 7pm.";
+     } else if(texto.includes("clasico") || texto.includes("corte")) {
+        botResponse = "Corte clásico Precio: $150 Duración: 30 min Promo: Incluye lavado gratis";
+     } else if(texto.includes("fade") || texto.includes("moderno")) {
+        botResponse = "Fade moderno Precio: $180 Duración: 40 min Promo: 10% de descuento los miércoles";
+        } else if(texto.includes("Barba spa") || texto.includes("spa")) {
+        botResponse = "Barba spa Precio: $120 Duración: 25 min Promo: Incluye masaje facial";
+      } else if(texto.includes("combo") || texto.includes("+")) {
+               botResponse = "Combo corte + barba Precio: $250 Duración: 60 min Promo: Regalo de cera para cabello";
+ 
+      } else if (texto.includes("corte") || texto.includes("servicio")) {
+        botResponse = "Tenemos cortes clásicos, modernos, barba spa y más. Haz clic en 'Ver servicios' para ver el menú.";
+      } else if (texto.includes("precio") || texto.includes("cuánto cuesta")) {
+        botResponse = "Los precios varían entre $120 y $250 MXN. Diga sobre que producto o servicio le gustaria conocer el precio";
+      } else if (texto.includes("promoción") || texto.includes("descuento")) {
+        botResponse = "Tenemos descuentos los miércoles y combos especiales. ¡Consulta el menú de servicios!";
+      } else if (texto.includes("ubicación") || texto.includes("dónde están")) {
+        botResponse = "Estamos en Av. Reforma #123, CDMX. ¿Quieres que te mande la ubicación por WhatsApp?";
+      } else if (texto.includes("producto") || texto.includes("tratamiento") || texto.includes("cremas")) {
+        botResponse = "Perfecto, los productos con los que contamos son: CREMAS PARA EL CUIDADO DE LA BARBA, CREMAS PARA RISOS, GELES Y TRATAMIENTOS";
+      }
+
+     chatBox.innerHTML += `
+  <div class="bot-message">
+    <img src="chato.png" alt="Bot" class="bot-logo">
+    <span>${botResponse}</span>
+  </div>`;
+
+      input.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+  
+
+      let html = "<ul>";
+      servicios.forEach(servicio => {
+        html += `<li><strong>${servicio.nombre}</strong><br>
+                 Precio: ${servicio.precio}<br>
+                 Duración: ${servicio.duracion}<br>
+                 Promo: ${servicio.promo}</li><br>`;
+      });
+      html += "</ul>";
+
+      document.getElementById("servicios").innerHTML = html;
+      document.getElementById("servicios").style.display = "block";
+    }
+  </script>
+</center>
+
+
+  
+
+
+<br>
+<br>
+
+
+  
+
+  <footer>
+    <p>Macho Alfa Online © 2025 |</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BARBERIA_MACHO_ALFA</title>
+  <link rel="stylesheet" href="HOJA1.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=MXN"></script>
+</head>
+<body>
+
+  <header>
+    <section class="logo">
+      <h1><img src="ima.png" alt="Logo de la página">BARBERIA MACHO ALFA</h1>
+    </section>
+    <div class="franja-roja">
+      <nav>
+        <div class="menu">
+          <br>
+          <ul>
+            <li><a href="Index.html">INICIO</a></li>
+            <li>PRODUCTOS</li>
+            <li><a href="CORTES.html">CORTES</a></li>
+            <li><a href="CITAS.html">CITAS</a></li>
+            <li><a href="CHATBOT.html">CHATBOT</a></li>
+            <li><a href="creadores.html">COLABORADORES</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="separador-azul"></div>
+
+  <div class="titulo">
+    <h1>Productos Macho Alfa</h1>
+  </div>
+
+  <!-- Carrusel de productos -->
+  <div class="carousel-container">
+    <button class="carousel-btn left">&#10094;</button>
+    <div class="carousel-track">
+      <div class="producto">
+        <img src="pomada.jpg" alt="Pomada Matte Firme">
+        <h3>Pomada Matte Firme - $289</h3>
+        <button onclick="agregarAlCarrito('Pomada Matte Firme', 289)">Agregar al carrito</button>
+      </div>
+
+      <div class="producto">
+        <img src="pomada2.jpg" alt="Pomada Fijación Fuerte">
+        <h3>Pomada Fijación Fuerte - $289</h3>
+        <button onclick="agregarAlCarrito('Pomada Fijación Fuerte', 289)">Agregar al carrito</button>
+      </div>
+      
+      <div class="producto">
+        <img src="p3.webp" alt="POMADA PARA EL CABELLO FIJACION MEDIA / POMADE ORIGINAL 113GR">
+        <h3>POMADA PARA EL CABELLO FIJACION MEDIA / POMADE ORIGINAL 113GR - $199</h3>
+        <button onclick="agregarAlCarrito('POMADA PARA EL CABELLO FIJACION MEDIA', 199)">Agregar al carrito</button>
+      </div>
+
+      <div class="producto">
+        <img src="p2.webp" alt="SENSE POMADE /FIJACION EXTRA FUERTE NUEVA">
+        <h3>SENSE POMADE /FIJACION EXTRA FUERTE NUEVA - $199</h3>
+        <button onclick="agregarAlCarrito('SENSE POMADE', 199)">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="risos.jpg" alt="Tratamiento Rizos">
+        <h3>Tratamiento Rizos Definidos - $199</h3>
+        <button onclick="agregarAlCarrito('Tratamiento Rizos Definidos', 199)">Agregar al carrito</button>
+      </div>
+
+      <div class="producto">
+        <img src="ACONDICIONADOR-MIEL-Y-YOGURT_FRENTE.webp" alt="ACONDICIONADOR MIEL Y YOGURT + AGUACATE">
+        <h3>ACONDICIONADOR MIEL Y YOGURT + AGUACATE - $199</h3>
+        <button onclick="agregarAlCarrito('ACONDICIONADOR MIEL Y YOGURT + AGUACATE', 199)">Agregar al carrito</button>
+      </div>
+
+      <div class="producto">
+        <img src="gotas.webp" alt="GOTAS DE SEDA/TERMOPROTECTORAS">
+        <h3>GOTAS DE SEDA/TERMOPROTECTORAS - $199</h3>
+        <button onclick="agregarAlCarrito('GOTAS DE SEDA/TERMOPROTECTORAS', 199)">Agregar al carrito</button>
+      </div>
+
+      <div class="producto">
+        <img src="shampoo.webp" alt="SHAMPOO SÁBILA Y AGUACATE">
+        <h3>SHAMPOO SÁBILA Y AGUACATE - $199</h3>
+        <button onclick="agregarAlCarrito('SHAMPOO SÁBILA Y AGUACATE', 199)">Agregar al carrito</button>
+      </div>
+      
+      <div class="producto">
+        <img src="la cosa.jpg" alt="TALCO ULTRA FINO DE BERBERIA">
+        <h3>TALCO ULTRA FINO DE BARBERIA 110gr/4Oz - $199</h3>
+        <button onclick="agregarAlCarrito('TALCO ULTRA FINO DE BARBERIA', 199)">Agregar al carrito</button>
+      </div>
+
+      <div class="producto">
+        <img src="gel.webp" alt="GEL PARA AFEITAR">
+        <h3>GEL PARA AFEITAR 480ML- $199</h3>
+        <button onclick="agregarAlCarrito('GEL PARA AFEITAR', 199)">Agregar al carrito</button>
+      </div>
+
+      <div class="producto">
+        <img src="polvo.webp" alt="POLVO TEXTURIZADOR PARA CABELLO 30 GR">
+        <h3>POLVO TEXTURIZADOR PARA CABELLO 30 GR - $199</h3>
+        <button onclick="agregarAlCarrito('POLVO TEXTURIZADOR PARA CABELLO 30 GR', 199)">Agregar al carrito</button>
+      </div>
+
+       <div class="producto">
+        <img src="agua.webp" alt="SEA SALT/ AGUA DE SAL 250ML">
+        <h3>SEA SALT/ AGUA DE SAL 250ML- $199</h3>
+        <button onclick="agregarAlCarrito('SEA SALT/ AGUA DE SAL 250ML', 199)">Agregar al carrito</button>
+      </div>
+
+      <div class="producto">
+        <img src="aceite.webp" alt="ACEITE PARA BARBA Y BIGOTE 30ML CITRICO">
+        <h3>ACEITE PARA BARBA Y BIGOTE 30ML CITRICO- $199</h3>
+        <button onclick="agregarAlCarrito('ACEITE PARA BARBA Y BIGOTE 30ML CITRICO', 199)">Agregar al carrito</button>
+      </div>
+
+      <div class="producto">
+        <img src="crecimiento.webp" alt="BÁLSAMO DE CRECIMIENTO PARA BARBA Y BIGOTE CON MINOXIDIL 5% 60ML">
+        <h3>BÁLSAMO DE CRECIMIENTO PARA BARBA Y BIGOTE CON MINOXIDIL 5% 60ML- $199</h3>
+        <button onclick="agregarAlCarrito('BÁLSAMO DE CRECIMIENTO PARA BARBA Y BIGOTE CON MINOXIDIL 5% 60ML', 199)">Agregar al carrito</button>
+      </div>
+      
+      <div class="producto">
+        <img src="aceite2.webp" alt="ACEITE PARA BARBA Y BIGOTE 30ML AMADERADO">
+        <h3>ACEITE PARA BARBA Y BIGOTE 30ML AMADERADO- $199</h3>
+        <button onclick="agregarAlCarrito('ACEITE PARA BARBA Y BIGOTE 30ML AMADERADO', 199)">Agregar al carrito</button>
+      </div>
+
+      <div class="producto">
+        <img src="tonico.webp" alt="TONICO AFTER SHAVE 250ML ORIGINAL">
+        <h3>TONICO AFTER SHAVE 250ML ORIGINAL- $199</h3>
+        <button onclick="agregarAlCarrito('TONICO AFTER SHAVE 250ML ORIGINAL', 199)">Agregar al carrito</button>
+      </div>
+
+      <div class="producto">
+        <img src="tonico2.webp" alt="TONICO AFTER SHAVE 250ML RED">
+        <h3>TTONICO AFTER SHAVE 250ML RED- $199</h3>
+        <button onclick="agregarAlCarrito('TONICO AFTER SHAVE 250ML RED', 199)">Agregar al carrito</button>
+      </div>
+    </div>
+    <button class="carousel-btn right">&#10095;</button>
+  </div>
+
+  <!-- Carrito -->
+  <div class="carrito">
+    <h2>🛒 Tu carrito</h2>
+    <ul id="lista-carrito"></ul>
+    <p>Total: $<span id="total">0</span></p>
+    <button onclick="vaciarCarrito()">Vaciar carrito</button>
+    <button class="finalizar" onclick="generarPDF()">Descargar ticket en PDF</button>
+    <div id="paypal-button-container"></div>
+  </div>
+
+  <footer>
+    <p>Macho Alfa Online © 2025 |</p>
+  </footer>
+
+  <!-- Carrusel Script -->
+ <script>
+  const track = document.querySelector('.carousel-track');
+  const btnLeft = document.querySelector('.carousel-btn.left');
+  const btnRight = document.querySelector('.carousel-btn.right');
+  const container = document.querySelector('.carousel-container');
+
+  let scrollAmount = 0;
+  const scrollStep = 270;
+
+  function updateButtons() {
+    const maxScroll = track.scrollWidth - container.offsetWidth;
+    btnLeft.style.display = scrollAmount > 0 ? 'block' : 'none';
+    btnRight.style.display = scrollAmount < maxScroll ? 'block' : 'none';
+  }
+
+  btnLeft.addEventListener('click', () => {
+    scrollAmount = Math.max(scrollAmount - scrollStep, 0);
+    track.style.transform = `translateX(-${scrollAmount}px)`;
+    updateButtons();
+  });
+
+  btnRight.addEventListener('click', () => {
+    const maxScroll = track.scrollWidth - container.offsetWidth;
+    scrollAmount = Math.min(scrollAmount + scrollStep, maxScroll);
+    track.style.transform = `translateX(-${scrollAmount}px)`;
+    updateButtons();
+  });
+
+  window.addEventListener('resize', updateButtons);
+  window.addEventListener('load', updateButtons);
+</script>
+
+
+  <!-- Carrito y PDF Script -->
+  <script>
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let total = parseFloat(localStorage.getItem('total')) || 0;
+
+    function agregarAlCarrito(producto, precio) {
+      const existente = carrito.find(item => item.producto === producto);
+      if (existente) {
+        existente.cantidad += 1;
+        existente.precioTotal = existente.cantidad * existente.precioUnitario;
+      } else {
+        carrito.push({ producto, precioUnitario: precio, cantidad: 1, precioTotal: precio });
+      }
+      total += precio;
+      guardarCarrito();
+      actualizarCarrito();
+    }
+
+    function eliminarProducto(index) {
+      total -= carrito[index].precioTotal;
+      carrito.splice(index, 1);
+      guardarCarrito();
+      actualizarCarrito();
+    }
+
+    function actualizarCarrito() {
+      const lista = document.getElementById('lista-carrito');
+      lista.innerHTML = '';
+      carrito.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          ${item.producto} x${item.cantidad} - $${item.precioTotal.toFixed(2)}
+          <button onclick="eliminarProducto(${index})">Eliminar</button>
+        `;
+        lista.appendChild(li);
+      });
+      document.getElementById('total').textContent = total.toFixed(2);
+    }
+
+    function vaciarCarrito() {
+      carrito = [];
+      total = 0;
+      guardarCarrito();
+      actualizarCarrito();
+    }
+
+    function guardarCarrito() {
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      localStorage.setItem('total', total.toString());
+    }
+
+    function generarPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const ahora = new Date();
+      const fecha = ahora.toLocaleDateString('es-MX');
+      const hora = ahora.toLocaleTimeString('es-MX');
+
+      doc.setFontSize(16);
+      doc.text("🧾 Ticket de Compra - Macho Alfa", 20, 20);
+      doc.setFontSize(12);
+      doc.text(`Fecha: ${fecha}`, 20, 30);
+      doc.text(`Hora: ${hora}`, 20, 37);
+
+      let y = 47;
+      carrito.forEach(item => {
+        doc.text(`${item.producto} x${item.cantidad} - $${item.precioTotal.toFixed(2)}`, 20, y);
+        y += 10;
+      });
+
+      doc.setFontSize(14);
+      doc.text(`Total pagado: $${total.toFixed(2)}`, 20, y + 10);
+      doc.text("Gracias por tu compra. ¡Vuelve pronto!", 20, y + 20);
+      doc.save("ticket_macho_alfa.pdf");
+    }
+
+    actualizarCarrito();
+
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: total.toFixed(2)
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Gracias por tu compra, ' + details.payer.name.given_name + '!');
+          vaciarCarrito();
+        });
+      }
+    }).render('#paypal-button-container');
+  </script>
+</body>
+</html>
